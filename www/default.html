@@ -1,0 +1,115 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<title>FIXLOCK</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/framework.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+
+<!--Script's personalizados-->
+
+<script src="js/functions.js"></script>
+<script src="js/cria_banco.js"></script>
+
+
+<body>
+
+	<div id="page-transitions">
+		<div id="page-content" class="page-content page-content-full">
+
+			<div class="cover-item cover-item-full">
+				<div class="cover-content cover-content-center">
+					<div class="page-login content-boxed content-boxed-padding no-top no-bottom">
+						<div id="container_logo">
+
+						</div>
+						<img src="spin.svg" id="loading" style="display:none;position:fixed;z-index:1000;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+						<div class="page-login-field half-top">
+							<i class="fa fa-user"></i>
+							<input type="text" placeholder="ID" id="id_tec">
+							<em>(obrigatório)</em>
+						</div>
+
+
+						<button type="button" class="button button-red button-full button-rounded button-s uppercase ultrabold" onclick="entrar()">Entrar</button>
+						<div class="page-login-links small-bottom">
+								<a class="create float-left" href="#" onclick="serial_number()"><i class="fa fa-eye"></i>Qual é meu serial?</a>						
+							</div>
+	
+						
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+		<!-- POP DE ERRO -->
+		<li style="list-style:none !important">
+			<a data-deploy-menu="notification-modal-2" href="#" style="display:none" id="alert_erro"></a>
+		</li>
+		<div id="notification-modal-2" data-menu-size="260" class="menu-wrapper menu-light menu-modal menu-modal-square">
+			<h1 class="center-text half-top full-bottom color-red-light">
+				<i class="fa fa-times fa-2x"></i>
+			</h1>
+			<h1 class="no-top uppercase ultrabold no-bottom center-text">Ops!</h1>
+			<p class="color-black opacity-70 center-text full-bottom" id="msg_alert_erro">
+			</p>
+			<a href="#" class="close-menu button button-rounded button-s button-center button-red uppercase ultrabold">OK</a>
+		</div>
+
+		<!-- POP DE CONEXÃO -->
+		<li style="list-style:none !important">
+			<a data-deploy-menu="notification-modal-3" href="#" style="display:none" id="alert_erro_internet"></a>
+		</li>
+		<div id="notification-modal-3" data-menu-size="260" class="menu-wrapper menu-light menu-modal menu-modal-square">
+			<h1 class="center-text half-top full-bottom color-red-light">
+				<i class="fa fa-times fa-2x"></i>
+			</h1>
+			<h1 class="no-top uppercase ultrabold no-bottom center-text">OPS!</h1>
+			<p class="color-black opacity-70 center-text full-bottom">
+				Não detectamos uma conexão com a internet, por favor, verifique sua conexão e tente novamente!
+			</p>
+			<a href="#" class="close-menu button button-rounded button-s button-center button-red uppercase ultrabold">OK</a>
+		</div>
+
+		<!-- POP DE SUCESSO -->
+		<li style="list-style:none !important">
+			<a data-deploy-menu="notification-modal-1" href="#" style="display:none" id="alert_serial"></a>
+		</li>
+		<div id="notification-modal-1" data-menu-size="260" class="menu-wrapper menu-light menu-modal">
+			<h1 class="center-text half-top full-bottom color-green-light">
+				<i class="fa fa-check fa-2x"></i>
+			</h1>
+			<h1 class="no-top uppercase ultrabold no-bottom center-text">Serial</h1>
+			<p class="color-black opacity-70 center-text full-bottom" id="txt_alert_sucesso">
+			</p>
+			<a href="#" class="close-menu button button-rounded button-s button-center button-green uppercase ultrabold">OK!</a>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+	<script type="text/javascript" src="scripts/plugins.js"></script>
+
+</body>
+
+<script>
+	busca_logo()
+
+	function busca_logo() {
+		if (window.localStorage.getItem("logo_cli") != null) {
+			$("#container_logo").html('<img class="preload-image login-bg responsive-image no-bottom" src="' + window.localStorage.getItem("logo_cli") + '" data-src="' + window.localStorage.getItem("logo_cli") + '" alt="img">')
+		}
+		else {
+			$("#container_logo").html('<img class="preload-image login-bg responsive-image no-bottom" src="images/pictures/9w.jpg" data-src="images/pictures/9w.jpg" alt="img">')
+		}
+	}
+</script>

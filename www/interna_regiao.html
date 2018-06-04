@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>FIXLOCK</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/framework.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="page-transitions" style="margin-top: -20px !important">
+
+        <div id="header" class="header-logo-center header-dark">
+            <a href="#" class="header-logo"></a>
+            <a href="#" class="header-icon header-icon-1 back-button font-10 no-border" onclick="getRegiao()"><i class="fa fa-chevron-left"></i></a>
+        </div>
+
+        <div id="page-content" class="page-content page-content-gray">
+            <div id="page-content-scroll" class="header-clear-large">
+                <br>
+                <div class="content">
+                    <div class="blog-categories blog-categories-2 small-bottom" id="monta_dispositivo">     
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <a href="#" class="back-to-top-badge back-to-top-small">
+        <i class="fa fa-angle-up"></i>Back to Top
+    </a>
+
+    <li style="list-style:none !important">
+        <a data-deploy-menu="notification-modal-3" href="#" style="display:none" id="alert_erro_internet"></a>
+    </li>
+    <div id="notification-modal-3" data-menu-size="260" class="menu-wrapper menu-light menu-modal menu-modal-square">
+        <h1 class="center-text half-top full-bottom color-red-light">
+            <i class="fa fa-times fa-2x"></i>
+        </h1>
+        <h1 class="no-top uppercase ultrabold no-bottom center-text">OPS!</h1>
+        <p class="color-black opacity-70 center-text full-bottom">
+            Não detectamos uma conexão com a internet, por favor, verifique sua conexão e tente novamente!
+        </p>
+        <a href="#" class="close-menu button button-rounded button-s button-center button-red uppercase ultrabold" onclick="busca_modulo()">Tentar novamente</a>
+    </div>
+
+
+
+
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/plugins.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+
+    <script src="js/cria_banco.js"></script>
+
+    <script src="js/functions.js"></script>
+
+</body>
